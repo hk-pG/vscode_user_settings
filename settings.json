@@ -1,11 +1,22 @@
 {
-  // ターミナルの設定
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  // "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-  "terminal.integrated.fontWeight": "bold",
-  "terminal.integrated.shellIntegration.enabled": true,
+  // エディタのファイルアイコン
+  "workbench.iconTheme": "material-icon-theme",
+  // ファイルタブの折返し
+  "workbench.editor.wrapTabs": true,
+  // ファイルエクスプローラ等のバーを右側に設定する
+  "workbench.sideBar.location": "right",
+
+  // エディタの色
   "workbench.colorCustomizations": {
+    // カーソルの色
+    "editorCursor.foreground": "#ffff00",
+    "editorCursor.background": "#0000ff",
+
+    // カーソルのある行
+    "editor.lineHighlightBackground": "#7b79794a",
+    "editor.lineHighlightBorder": "#ffffff8d",
+
+    // ターミナルの色
     "terminal.background": "#090300",
     "terminal.foreground": "#FDED02",
     "terminalCursor.background": "#A5A2A2",
@@ -28,43 +39,55 @@
     "terminal.ansiYellow": "#FDED02"
   },
 
+  // ターミナルの設定
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  // "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "terminal.integrated.fontWeight": "bold",
+  "terminal.integrated.shellIntegration.enabled": true,
+
+  // 背景画像
+  "backgroundCover.randomImageFolder": "/Volumes/GoogleDrive/マイドライブ/写真/background/ブルアカ",
+  "backgroundCover.opacity": 0.1,
+  "backgroundCover.imagePath": "/Volumes/GoogleDrive/マイドライブ/写真/background/ブルアカ/21.jpeg",
+
   "remote.SSH.remotePlatform": {
     "student.hamako-ths.ed.jp": "linux"
   },
 
   // start =========================================================================
-
-  // エディタの背景色
-  // "workbench.colorTheme": "Default High Contrast",
-  // エディタのファイルアイコン
-  "workbench.iconTheme": "material-icon-theme",
-  // ファイルタブの折返し
-  "workbench.editor.wrapTabs": true,
-  // ファイルエクスプローラ等のバーを右側に設定する
-  "workbench.sideBar.location": "right",
-  // ファイルを新しいタブで開く
-  "workbench.editor.enablePreview": false,
-
   "window.commandCenter": true,
 
-  //エディタの基本のフォントサイズを決める
-  "editor.fontSize": 15,
+  "editor.fontSize": 13,
+  "editor.fontWeight": "100",
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+
   "editor.tabSize": 4,
+
   "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.renderLineHighlight": "all",
+
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
 
   //エディタのフォントの太さを決める : boldやnormalの他に、100, 200, 900, 等の数値のみで決める
-  // "editor.fontWeight": "bold",
   "editor.linkedEditing": true,
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
   "editor.autoClosingBrackets": "always",
+
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+
   "editor.bracketPairColorization.enabled": true,
+
+  "editor.inlayHints.fontSize": 4,
+
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -86,7 +109,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.autoClosingQuotes": "always",
   "explorer.confirmDragAndDrop": false,
-  "editor.insertSpaces": false,
   "git.mergeEditor": true,
   "git.confirmSync": false,
   "github.copilot.enable": {
@@ -94,19 +116,19 @@
     "yaml": false,
     "plaintext": false,
     "markdown": false,
-    "java": true
+    "java": true,
+    "dart": true
   },
   "git.autofetch": true,
 
   // NeoVim関連 [
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
-  // "vscode-neovim.neovimExecutablePaths.linux": "/home/student/ei/ei20/ei2030/nvim/bin/nvim",
-  // "vscode-neovim.neovimExecutablePaths.win32": "/home/student/ei/ei20/ei2030/.config/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/student/ei/ei20/ei2030/nvim/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.win32": "/home/student/ei/ei20/ei2030/.config/nvim",
   // "http.proxy": "http://ei2030:hukada114514@proxy.hamako-ths.ed.jp:8080/",
   // "http.proxyStrictSSL": false,
   "security.workspace.trust.untrustedFiles": "newWindow",
-  "editor.inlayHints.fontSize": 4,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.inlineSuggest.enabled": true,
   // NeoVim関連 ]
@@ -117,6 +139,14 @@
     "editor.wordBasedSuggestions": false,
     "editor.suggest.insertMode": "replace",
     "editor.semanticHighlighting.enabled": true
+  },
+
+  "[plaintext]": {
+    "editor.defaultFormatter": "plaintext"
+  },
+
+  "[gradle]": {
+    "editor.defaultFormatter": "naco-siren.gradle-language"
   },
 
   "[javascript]": {
@@ -169,7 +199,40 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "dart.openDevTools": "flutter",
+  "dart.flutterSdkPath": "/Users/hk-p/.asdf/installs/flutter/3.3.0-stable",
+  "dart.flutterSdkPaths": ["/Users/hk-p/.asdf/installs/flutter/3.3.0-stable"],
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": false,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+
   // =========================================================================
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "files.maxMemoryForLargeFilesMB": 8192,
+  "powermode.enabled": false,
+  "material-icon-theme.opacity": 0.8,
+  "redhat.telemetry.enabled": true,
+
   "auto-close-tag.activationOnLanguage": [
     "xml",
     "php",
@@ -198,6 +261,7 @@
     "browserslist",
     "bunbo",
     "bunsi",
+    "callstack",
     "caniuse",
     "classpath",
     "colorette",
@@ -212,10 +276,13 @@
     "execa",
     "factorypath",
     "fgets",
+    "firestore",
     "gaearon",
     "hamako",
+    "ianh",
     "isexe",
     "isobject",
+    "Mapbox",
     "Menlo",
     "Meslo",
     "mixins",
@@ -228,15 +295,19 @@
     "picomatch",
     "Powerline",
     "printf",
+    "pubspec",
     "randombytes",
     "rechoir",
     "requring",
+    "RETR",
+    "riverpod",
     "sscanf",
     "struct",
     "tabnine",
     "tailwindcss",
     "tapable",
     "typesync",
+    "Upscaling",
     "vcanvas",
     "vctx",
     "verdana",
@@ -244,34 +315,24 @@
     "yallist",
     "yocto"
   ],
-  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "files.maxMemoryForLargeFilesMB": 8192,
-  "[scss]": {
+  "workbench.editorAssociations": {
+    "*.jpg": "luna.editor"
+  },
+  "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+  "githubPullRequests.createOnPublishBranch": "never",
+  "php-cs-fixer.lastDownload": 1667608966817,
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
   },
-  "dart.openDevTools": "flutter",
-  "dart.flutterSdkPath": "/Users/hk-p/.asdf/installs/flutter/3.0.5-stable",
-  "editor.minimap.size": "fill",
   "workbench.colorTheme": "Winter is Coming (Dark Blue)",
-  "redhat.telemetry.enabled": true,
-  "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+  "dart.showInspectorNotificationsForWidgetErrors": false,
+  "window.zoomLevel": -1,
+  "[ignore]": {
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "dart.debugExternalPackageLibraries": true,
-  "dart.debugSdkLibraries": false,
-  "powermode.enabled": false,
-  "material-icon-theme.opacity": 0.8
-
+  "vite.open": false,
+  "vite.autoStart": false
   // ]
 }
