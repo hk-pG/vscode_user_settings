@@ -40,13 +40,20 @@
   },
 
   // ターミナルの設定
-  "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "MesloLGS NF",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
   // "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
   "terminal.integrated.fontWeight": "bold",
   "terminal.integrated.shellIntegration.enabled": true,
+
+  "terminal.integrated.profiles.osx": {
+    "fish": {
+      "path": "/usr/local/bin/fish",
+      "args": ["-l"]
+    }
+  },
+
+  "terminal.integrated.defaultProfile.osx": "fish",
 
   // 背景画像
   "backgroundCover.randomImageFolder": "/Volumes/GoogleDrive/マイドライブ/写真/background/ブルアカ",
@@ -60,22 +67,21 @@
   // start =========================================================================
   "window.commandCenter": true,
 
-  "editor.fontSize": 13,
+  "editor.fontFamily": "'SourceCodePro' ,Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
   "editor.fontWeight": "100",
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
 
   "editor.tabSize": 4,
 
   "editor.cursorStyle": "line",
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorBlinking": "blink",
+  "editor.cursorSmoothCaretAnimation": "off",
   "editor.renderLineHighlight": "all",
 
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.minimap.enabled": false,
 
-  //エディタのフォントの太さを決める : boldやnormalの他に、100, 200, 900, 等の数値のみで決める
   "editor.linkedEditing": true,
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
@@ -91,6 +97,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+
+  // omni sharp
+  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current/Commands",
+  // ↓をfalseにしないと、Unityで使えない
+  "omnisharp.useModernNet": false,
 
   "liveServer.settings.donotShowInfoMsg": true,
   "explorer.confirmDelete": false,
@@ -124,29 +135,17 @@
   // NeoVim関連 [
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/student/ei/ei20/ei2030/nvim/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.win32": "/home/student/ei/ei20/ei2030/.config/nvim",
-  // "http.proxy": "http://ei2030:hukada114514@proxy.hamako-ths.ed.jp:8080/",
-  // "http.proxyStrictSSL": false,
+  // "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
   "security.workspace.trust.untrustedFiles": "newWindow",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.inlineSuggest.enabled": true,
   // NeoVim関連 ]
 
   // 言語ごとの設定[
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.wordBasedSuggestions": false,
+    // "editor.wordBasedSuggestions": false,
     "editor.suggest.insertMode": "replace",
     "editor.semanticHighlighting.enabled": true
-  },
-
-  "[plaintext]": {
-    "editor.defaultFormatter": "plaintext"
-  },
-
-  "[gradle]": {
-    "editor.defaultFormatter": "naco-siren.gradle-language"
   },
 
   "[javascript]": {
@@ -204,16 +203,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
-  },
+  "[dart]": {},
   "dart.openDevTools": "flutter",
   "dart.flutterSdkPath": "/Users/hk-p/.asdf/installs/flutter/3.3.0-stable",
   "dart.flutterSdkPaths": ["/Users/hk-p/.asdf/installs/flutter/3.3.0-stable"],
@@ -256,6 +246,7 @@
   ],
 
   "cSpell.userWords": [
+    "argvs",
     "autofetch",
     "Behaviour",
     "browserslist",
@@ -286,9 +277,12 @@
     "Menlo",
     "Meslo",
     "mixins",
+    "MONACA",
     "monospace",
     "neovim",
     "nvim",
+    "omni",
+    "omnisharp",
     "Perim",
     "phar",
     "phina",
@@ -300,12 +294,15 @@
     "rechoir",
     "requring",
     "RETR",
+    "Ricty",
+    "Rigidbody",
     "riverpod",
     "sscanf",
     "struct",
     "tabnine",
     "tailwindcss",
     "tapable",
+    "tauri",
     "typesync",
     "Upscaling",
     "vcanvas",
@@ -316,23 +313,48 @@
     "yocto"
   ],
   "workbench.editorAssociations": {
-    "*.jpg": "luna.editor"
+    "*.jpg": "luna.editor",
+    "*.png": "luna.editor",
+    "*.zip": "default"
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "githubPullRequests.createOnPublishBranch": "never",
-  "php-cs-fixer.lastDownload": 1667608966817,
+  "php-cs-fixer.lastDownload": 1675783242449,
   "[php]": {
-    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
-  "workbench.colorTheme": "Winter is Coming (Dark Blue)",
   "dart.showInspectorNotificationsForWidgetErrors": false,
-  "window.zoomLevel": -1,
   "[ignore]": {
     "editor.defaultFormatter": "lkrms.inifmt"
   },
   "vite.open": false,
-  "vite.autoStart": false
+  "vite.autoStart": false,
+  "[sql]": {
+    "editor.defaultFormatter": "cweijan.vscode-mysql-client2"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "editor.accessibilitySupport": "on",
+  "haskell.manageHLS": "GHCup",
+  "workbench.colorTheme": "Tinacious Design (High Contrast)",
+  "git.openRepositoryInParentFolders": "always",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "liveshare.accessibility.accessibilityFeaturesEnabled": "off",
+  "audioCues.volume": 0,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "boot-java.rewrite.reconcile": true,
+  "window.zoomLevel": -1,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
   // ]
 }
