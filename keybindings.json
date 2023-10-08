@@ -31,19 +31,9 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "cmd+h",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "cmd+k cmd+i",
     "command": "-editor.action.showHover",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+h",
-    "command": "workbench.action.showTreeHover",
-    "when": "customTreeView && listFocus && !inputFocus"
   },
   {
     "key": "cmd+k cmd+i",
@@ -51,17 +41,52 @@
     "when": "customTreeView && listFocus && !inputFocus"
   },
   {
-    "key": "cmd+h",
-    "command": "editor.debug.action.showDebugHover",
-    "when": "editorTextFocus && inDebugMode"
-  },
-  {
     "key": "cmd+k cmd+i",
     "command": "-editor.debug.action.showDebugHover",
     "when": "editorTextFocus && inDebugMode"
   },
   {
+    "key": "alt+cmd",
+    "command": "workbench.action.toggleMultiCursorModifier"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "alt+s",
+    "command": "git.stageAll"
+  },
+  {
+    "key": "alt+k",
+    "command": "git.commitStaged"
+  },
+  {
+    "key": "alt+p",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.reloadWindow",
+    "when": ""
+  },
+  {
+    "key": "ctrl+shift+oem_plus",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "ctrl+shift+oem_minus",
+    "command": "editor.action.fontZoomOut"
+  },
+  {
     "key": "cmd+h",
-    "command": "editor.action.showDefinitionPreviewHover"
+    "command": "editor.action.showHover"
+  },
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
   }
 ]
